@@ -3,7 +3,6 @@ import fs from "node:fs";
 class ProductManager {
   constructor(path) {
     this.path = path;
-    //this.product = {};
     this.productsList = [];
     this.nextId = 1;
   }
@@ -25,11 +24,15 @@ class ProductManager {
   // Funciones para Products
   async getProduct(id) {
     try {
-      const list = await fs.promises.readFile(this.path, "utf-8");
-      this.productsList = [...JSON.parse(list).products];
-
+      await this.getAllProducts();
       const product = this.productsList.find((prod) => prod.id == id);
-      return product ? { ...this.product } : null;
+      if (product) {
+        console.log("Producto encontrado");
+        return product;
+      } else {
+        console.log("Producto no encontrado");
+        return null;
+      }
     } catch (error) {
       console.error("Error al leer el archivo", error);
       return null;
