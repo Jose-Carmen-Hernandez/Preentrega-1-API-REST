@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "title": "producto 1",
+      "description": "zapatos talla 9",
+      "code": "fg5147g",
+      "price": 900,
+      "status": true,
+      "stock": 41,
+      "category": "calzado",
+      "id": 1
+    },
+    {
+      "title": "producto 2",
+      "description": "zapatos talla 7",
+      "code": "kjl425",
+      "price": 2250,
+      "status": true,
+      "stock": 85,
+      "category": "calzado",
+      "id": 2
+    },
+    {
+      "title": "producto 3",
+      "description": "remera talla 5",
+      "code": "kjl425",
+      "price": 1250,
+      "status": true,
+      "stock": 50,
+      "category": "ropa exterior",
+      "id": 3
+    },
+    {
+      "title": "producto 4",
+      "description": "pantalon talla 9",
+      "code": "kjh585",
+      "price": 2187,
+      "status": true,
+      "stock": 85,
+      "category": "pantalones",
+      "id": 4
+    }
+  ]
+}
