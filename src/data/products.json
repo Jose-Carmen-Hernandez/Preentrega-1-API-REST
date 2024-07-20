@@ -39,6 +39,26 @@
       "stock": 85,
       "category": "pantalones",
       "id": 4
+    },
+    {
+      "title": "producto 5",
+      "description": "remera talla 9",
+      "code": "rd125",
+      "price": 1300,
+      "status": true,
+      "stock": 29,
+      "category": "remeras",
+      "id": 5
+    },
+    {
+      "title": "producto 6",
+      "description": "pantalon talla 5",
+      "code": "pd325",
+      "price": 2300,
+      "status": true,
+      "stock": 77,
+      "category": "pantalones",
+      "id": 6
     }
   ]
 }

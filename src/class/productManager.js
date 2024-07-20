@@ -4,24 +4,19 @@ class ProductManager {
   constructor(path) {
     this.path = path;
     this.productsList = [];
-    this.nextId = 1;
+    //this.nextId = 1;
   }
 
   async setNewId() {
     try {
-      const list = await fs.promises.readFile(this.path, "utf-8");
-      this.productsList = JSON.parse(list).products;
-      const maxId = this.productsList.reduce(
-        (max, prod) => (prod.id > max ? prod.id : max),
-        0
-      );
-      return maxId + 1;
+      await this.getAllProducts();
+      return this.productsList.length + 1;
     } catch (error) {
       console.error("Error al obtener el nuevo ID", error);
     }
   }
 
-  // Funciones para Products
+  // Funciones para Productos:
   async getProduct(id) {
     try {
       await this.getAllProducts();
@@ -52,8 +47,8 @@ class ProductManager {
 
   async addProduct(product) {
     try {
-      const newId = await this.setNewId();
-      product.id = newId; // Asignamos el nuevo ID al producto
+      // Asignamos el nuevo ID al producto
+      product.id = await this.setNewId();
       await this.getAllProducts();
       this.productsList.push(product);
 
